@@ -1,0 +1,285 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+}
+
+/* Responsive and performance improvements */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  min-width: 0;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  text-wrap: balance;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+#vsl-hero-section {
+  background: radial-gradient(ellipse 80% 55% at 50% 0%, rgba(0, 0, 0, 0.04) 0%, #FFFFFF 70%);
+}
+
+vturb-smartplayer {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.vturb-player-placeholder {
+  position: relative;
+  width: 100%;
+  padding: 56.25% 0 0;
+  z-index: 0;
+  background-color: black;
+}
+
+[data-checkout-link] {
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  min-height: 52px;
+}
+
+#offer-box .flex.items-center.justify-between {
+  flex-wrap: wrap;
+}
+
+#policy-modal > div {
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+[data-delayed-offer] {
+  display: none !important;
+}
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: clamp(1.75rem, 8vw, 2.1rem) !important;
+    line-height: 1.13 !important;
+  }
+
+  .font-display.text-5xl {
+    font-size: 2.35rem;
+  }
+
+  #offer-box .text-5xl {
+    font-size: 2.5rem;
+  }
+
+  [data-checkout-link] {
+    padding: 0.95rem 0.8rem;
+    font-size: 0.94rem;
+  }
+
+  .tracking-\[0\.2em\] {
+    letter-spacing: 0.13em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Trust symbols provided by the seller; placed below each checkout CTA. */
+.payment-trust-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(8px, 1.7vw, 16px);
+  margin-top: 14px;
+}
+
+.payment-trust-row img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.payment-trust-row .trust-money-back {
+  width: clamp(142px, 40vw, 184px);
+}
+
+.payment-trust-row .trust-ssl {
+  width: clamp(115px, 34vw, 150px);
+}
+
+.payment-trust-row .trust-secure {
+  width: 78px;
+  border-radius: 7px;
+}
+
+@media (min-width: 768px) {
+  .payment-trust-row {
+    justify-content: flex-start;
+  }
+
+  .payment-trust-row.offer-trust-row {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 359px) {
+  .payment-trust-row {
+    gap: 9px;
+  }
+
+  .payment-trust-row .trust-money-back {
+    width: 140px;
+  }
+
+  .payment-trust-row .trust-ssl {
+    width: 112px;
+  }
+
+  .payment-trust-row .trust-secure {
+    width: 64px;
+  }
+}
+
+/* Small, understated CTA shown below the video before the delayed offer. */
+.early-cta-container {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.early-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 100%;
+  min-height: 40px;
+  padding: 9px 15px;
+  border: 1px solid #d4d4d8;
+  border-radius: 7px;
+  background: #fafafa;
+  color: #3f3f46;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: break-word;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.early-cta-button:hover {
+  background: #f4f4f5;
+  border-color: #a1a1aa;
+}
+
+.early-cta-button:focus-visible {
+  outline: 2px solid #52525b;
+  outline-offset: 3px;
+}
+
+@media (max-width: 360px) {
+  .early-cta-button {
+    font-size: 12px;
+    padding: 9px 12px;
+  }
+}
+
+/* Phone video: comfortably framed with 16px of space on either side. */
+@media (max-width: 639px) {
+  #vsl-hero-section {
+    padding-inline: 8px !important;
+  }
+
+  #vsl-hero-card {
+    padding-inline: 10px !important;
+    overflow: visible !important;
+  }
+
+  #vsl-player-area {
+    width: calc(100vw - 32px) !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw + 16px) !important;
+    margin-right: 0 !important;
+  }
+
+  #vsl-player-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    border: 1px solid #18181b !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+  }
+
+  #vsl-player-frame vturb-smartplayer,
+  #vsl-player-frame .vturb-player-placeholder {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* All three bonus mockups stay fully visible inside their own frames, including on narrow phones. */
+.bonus-image-frame {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: 16rem;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bonus-image-frame > .bonus-image-art {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center center;
+  flex: 0 1 auto;
+}
